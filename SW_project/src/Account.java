@@ -33,19 +33,8 @@ class Account {
 
     }
 
-    void signUp(Account_modle modle){
-        Scanner in = new Scanner(System.in);
-        System.out.println("name:");
-        String n = in.nextLine();
-        System.out.println("age:");
-        int a =Integer.parseInt(in.nextLine());
-        System.out.println("gender:");
-        String g = in.nextLine();
-        System.out.println("user name:");
-        String u = in.nextLine();
-        System.out.println("password:");
-        String p = in.nextLine();
-        setInfo(n,a,g,u,p);
+    void signUp(String[] info,Account_modle modle){
+        setInfo(info[0],Integer.parseInt(info[1]),info[2],info[3],info[4]);
         modle.save(this);
     }
 

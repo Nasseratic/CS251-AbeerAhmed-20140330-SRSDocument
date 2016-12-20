@@ -10,35 +10,30 @@ public class Main {
     public static void main(String[] args ){
 
         Account_modle account_modle=new Account_modle();
-        Scanner in = new Scanner(System.in); //GUI
-
+        GUI _GUI=new GUI();
         while (true) {
 
             Account account;
-            System.out.println("signUp(s)/ log_in(l):"); //GUI
+            String inputs;
+            inputs=_GUI.display_in_or_up();
+            if (inputs.equals("s")) {
 
-            String input = in.nextLine();
+                inputs=_GUI.display_t_or_s();
 
-            if (input.equals("s")) {
-                System.out.println("Teacher(t)/Student(s) :");//GUI
-                input=in.nextLine();
-                if (input.equals("t")){
+                if (inputs.equals("t")){
                     account = new Teacher();
                 } else {
                     account = new Student();
                 }
-                account.signUp(account_modle);
+
+                account.signUp(_GUI.display_signUp_form(),account_modle);
             }
 
             else {
+                String []u_name_pw =_GUI.display_login_form();
 
-                System.out.println("User Name : ");//GUI
-                String u_name = in.nextLine();
-                System.out.println("Password : ");//GUI
-                String pw = in.nextLine();
                 account = new Account();
-                account = account.login(u_name, pw, account_modle);
-
+                account = account.login(u_name_pw[0], u_name_pw[1], account_modle);
             }
 
 
@@ -49,5 +44,4 @@ public class Main {
 
 
 }
-
 
