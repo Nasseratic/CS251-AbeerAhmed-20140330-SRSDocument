@@ -13,8 +13,9 @@ public class Main {
         Scanner in = new Scanner(System.in); //GUI
 
         while (true) {
+
             Account account;
-            System.out.println("sign_in(s)/ log_in(l):"); //GUI
+            System.out.println("signUp(s)/ log_in(l):"); //GUI
 
             String input = in.nextLine();
 
@@ -26,9 +27,7 @@ public class Main {
                 } else {
                     account = new Student();
                 }
-
-                account.signin(account_modle);
-
+                account.signUp(account_modle);
             }
 
             else {

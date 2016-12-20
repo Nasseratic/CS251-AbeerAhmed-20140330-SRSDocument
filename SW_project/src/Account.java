@@ -33,7 +33,7 @@ class Account {
 
     }
 
-    void signin(Account_modle modle){
+    void signUp(Account_modle modle){
         Scanner in = new Scanner(System.in);
         System.out.println("name:");
         String n = in.nextLine();
