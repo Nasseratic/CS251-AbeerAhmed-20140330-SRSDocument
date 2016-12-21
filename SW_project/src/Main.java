@@ -11,8 +11,8 @@ public class Main {
 
         Account_modle account_modle=new Account_modle();
         GUI _GUI=new GUI();
+        account_modle.loadAccountsData();
         while (true) {
-
             Account account;
             String inputs;
             inputs=_GUI.display_in_or_up();
@@ -27,6 +27,7 @@ public class Main {
                 }
 
                 account.signUp(_GUI.display_signUp_form(),account_modle);
+                account_modle.saveAccountsData();
             }
 
             else {
@@ -37,8 +38,8 @@ public class Main {
             }
 
 
-
         }
+
 
     }
 
