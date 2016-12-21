@@ -25,7 +25,15 @@ class Account {
     }
 
     //setting info to the object
+    void setInfo(String name , int age , String gender , String u_name , String pw ){
+        //setting info to the object
+        this.name=name;
+        this.age=age;
+        this.gender=gender;
+        this.u_name=u_name;
+        this.pw=pw;
 
+    }
 
 
     void signUp(String[] info,Account_model model){

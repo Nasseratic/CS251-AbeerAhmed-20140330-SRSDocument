@@ -15,7 +15,7 @@ public class Main {
 
         //Loads all Accounts from Files
         account_model.loadAccountsData();
-        gameModel.loadGames();
+        //games load in it's constructor
 
         while (true) {
 

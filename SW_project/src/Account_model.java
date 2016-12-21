@@ -61,7 +61,6 @@ class Account_model {
                 else {
                     a= new Student();
                 }
-                System.out.println(attebuts[0]);
                 a.setInfo(attebuts[0], Integer.parseInt(attebuts[1]), attebuts[2], attebuts[3], attebuts[4]);
                 accounts.add(a);
             }
