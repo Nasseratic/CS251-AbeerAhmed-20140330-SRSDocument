@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class GameModel {
-	private  final String filePath = "C:\\Users\\Abeer pc\\Desktop\\SWE-Phase3\\games.txt";
+	private  final String filePath = "games.txt";
 	private Vector<Game> games;
 	
 	GameModel(){
@@ -54,6 +54,14 @@ public class GameModel {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Vector<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(Vector<Game> games) {
+		this.games = games;
 	}
 
 	public void saveGamesData(){

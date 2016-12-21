@@ -6,11 +6,24 @@ import java.util.Scanner;
 class GUI{
 
     Scanner in = new Scanner(System.in);
+
+    void display_score(int score){
+        System.out.println("Score : "+score);
+    }
+
     String display_in_or_up(){
         System.out.println("signUp(s)/ log_in(l)/exit(e):"); //GUI
         String input = in.nextLine();
         return input;
     }
+
+     String displayGames(GameModel gameModel){
+        for(int i=0; i<gameModel.getGames().size(); i++)
+            System.out.println(i + "." + gameModel.getGames().get(i).getName());
+         System.out.println("Enter Game Name : ");
+        return in.nextLine();
+    }
+
     String display_t_or_s(){
         System.out.println("Teacher(t)/Student(s):");//GUI
         String input = in.nextLine();

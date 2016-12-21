@@ -26,6 +26,17 @@ public class Game {
 		correctAnswers = null;
 	}
 	
+
+	
+	public Game choose(String name, GameModel gameModel){
+		for(int i=0; i<gameModel.getGames().size(); i++){
+			if(name.equals(gameModel.getGames().get(i).getName()))
+				return gameModel.getGames().get(i);
+		}
+		
+		return null;
+	}
+	
 	public int play(){
 		int[] userAnswers = new int[numOfQuestions];
 		int score = 0;
@@ -69,8 +80,8 @@ public class Game {
 		this.setCategory(scan.nextLine());
 		
 		System.out.print("Number of Questions: ");
-		this.setNumOfQuestions(scan.nextInt());
-
+		this.setNumOfQuestions(Integer.parseInt(scan.nextLine()));
+		
 		if(this.getCategory().equals("MCQ")){
 			String[] questionsData = new String[this.getNumOfQuestions()*5];
 			int[] correctAnswers = new int[this.getNumOfQuestions()];
@@ -82,19 +93,17 @@ public class Game {
 				questionsData[i+3] = scan.nextLine();
 				questionsData[i+4] = scan.nextLine();
 				System.out.print("Enter correct answer number: ");
-				correctAnswers[j] = scan.nextInt();
+				correctAnswers[j] = Integer.parseInt(scan.nextLine());
 			}
 			this.setQuestionsData(questionsData);
 			this.setCorrectAnswers(correctAnswers);
 		}else{
-			System.out.println(this.getNumOfQuestions() + " > " + this.getNumOfQuestions());
 			String[] questionsData = new String[this.getNumOfQuestions()];
 			int[] correctAnswers = new int[this.getNumOfQuestions()];
-            scan.nextLine();
 			for(int i=0; i<this.getNumOfQuestions(); i++){
 				System.out.println("Enter question #" + (i+1) + " and its correct answer each on a separate line:");
-                questionsData[i] = scan.nextLine();
-				correctAnswers[i] =Integer.parseInt(scan.nextLine());
+				questionsData[i] = scan.nextLine();
+				correctAnswers[i] = Integer.parseInt(scan.nextLine());
 			}
 			this.setQuestionsData(questionsData);
 			this.setCorrectAnswers(correctAnswers);
