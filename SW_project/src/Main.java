@@ -13,6 +13,7 @@ public class Main {
         GUI _GUI=new GUI();
         account_modle.loadAccountsData();
         while (true) {
+
             Account account;
             String inputs;
             inputs=_GUI.display_in_or_up();
@@ -30,11 +31,30 @@ public class Main {
                 account_modle.saveAccountsData();
             }
 
-            else {
+            else if (inputs.equals("l")){
                 String []u_name_pw =_GUI.display_login_form();
 
                 account = new Account();
                 account = account.login(u_name_pw[0], u_name_pw[1], account_modle);
+
+                if(account.verify().equals("Student")){
+
+                }
+                else if (account.verify().equals("Teacher")){
+
+                }
+                else {
+
+                }
+
+            }
+            else if (inputs.equals("e")){
+                _GUI.exit();
+                return;
+            }
+            else {
+                _GUI.error();
+                return;
             }
 
 

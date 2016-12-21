@@ -4,15 +4,15 @@ import java.util.Scanner;
  * Created by LENOVO on 16/12/20.
  */
 class GUI{
+
     Scanner in = new Scanner(System.in);
     String display_in_or_up(){
-        System.out.println("signUp(s)/ log_in(l):"); //GUI
+        System.out.println("signUp(s)/ log_in(l)/exit(e):"); //GUI
         String input = in.nextLine();
-
         return input;
     }
     String display_t_or_s(){
-        System.out.println("Teacher(t)/Student(s) :");//GUI
+        System.out.println("Teacher(t)/Student(s):");//GUI
         String input = in.nextLine();
         return input;
     }
@@ -42,5 +42,12 @@ class GUI{
         return str;
     }
 
+    void error(){
+        System.out.println("Error..");
+    }
+
+    void exit(){
+        System.out.println("exit ..");
+    }
 
 }
